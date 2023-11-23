@@ -13,7 +13,7 @@ book:
   page-navigation: true
   chapters:
     - index.qmd
-    - intro.qmd
+    - data.qmd
     - basicr.qmd
     - ggplot.qmd
     - references.qmd

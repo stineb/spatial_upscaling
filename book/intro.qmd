@@ -1,5 +1,0 @@
-# The data
-
-We will use a dataset of leaf nitrogen (N) content, measured in the field. The leaf N content is central for understanding the photosynthesis rates and biogeochemical cycling of N and C in terrestrial ecosystems. A rich body of literature has investigated global patterns of leaf N across the Earth's biomes and the relationships of leaf N to environmental factors. In recent years, leaf N data collected in the field by a large number of individual campaigns, has been collated into homogenised and analysis-ready data compilations. "Small data" has been made "big". Thanks to the fact that these data are geolocalised, covariate data from files with global coverage can be extracted and used to complement the observational leaf N data and to model leaf N on the basis of environmental covariates.
-
-Research in the our group ([GECO](https://geco-group.org/), Institute of Geography University of Bern) has generated such analysis-ready leaf N data, complemented with environmental covariates, and [made openly accessible](https://github.com/stineb/leafnp_data).

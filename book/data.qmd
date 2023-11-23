@@ -1,0 +1,32 @@
+# The data
+
+We will use a dataset of leaf nitrogen (N) content, measured in the field. The leaf N content is central for understanding the photosynthesis rates and biogeochemical cycling of N and C in terrestrial ecosystems. A rich body of literature has investigated global patterns of leaf N across the Earth's biomes and the relationships of leaf N to environmental factors. In recent years, leaf N data collected in the field by a large number of individual campaigns, has been collated into homogenised and analysis-ready data compilations. "Small data" has been made "big". Thanks to the fact that these data are geolocalised, covariate data from files with global coverage can be extracted and used to complement the observational leaf N data and to model leaf N on the basis of environmental covariates.
+
+Research in the our group ([GECO](https://geco-group.org/), Institute of Geography University of Bern) has generated such analysis-ready leaf N data, complemented with environmental covariates, and [made openly accessible](https://github.com/stineb/leafnp_data) on GitHub.
+
+Load the data directly from its online source on GitHub.
+```{r}
+df <- readr::read_csv("https://raw.githubusercontent.com/stineb/leafnp_data/main/data/leafnp_tian_et_al.csv")
+```
+
+We will work with a limited subset of the variables available in the file:
+
+- `leafN`: leaf nitrogen content, in mass-based concentration units (gN gDM$^{-1}$)
+- `lon`: longitude in decimal degrees east
+- `lat`: latitude in decimal degrees north
+- `elv`: Elevation above sea level (m)
+- `mat`: mean annual temperature (degrees Celsius)
+- `map`: mean annual precipitation (mm yr$^{-1}$)
+- `ndep`: atmospheric nitrogen deposition g m$^{-2}$ yr$^{-1}$
+- `mai`: mean annual daily irradiance $\micro$mol m$^{-2}$ s$^{-1}$
+
+```{r}
+df <- df |> 
+  dplyr::select(leafN, lon, lat, elv, mat, map, ndep, mai)
+
+# quick overview of data
+skimr::skim(df)
+
+# show missing data
+visdat::vis_miss(df)
+```
