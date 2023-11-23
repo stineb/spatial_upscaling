@@ -6,9 +6,9 @@ execute:
   freeze: auto
 
 book:
-  title: "Book Title"
-  subtitle: "Subtitle"
-  author: "Koen Hufkens"
+  title: "Spatial upscaling"
+  subtitle: "Exploring the generalisability of global leaf nitrogen models"
+  author: "Benjamin Stocker"
   date: "2023/01/01"
   page-navigation: true
   chapters:
