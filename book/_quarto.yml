@@ -6,16 +6,15 @@ execute:
   freeze: auto
 
 book:
-  title: "Book Title"
-  subtitle: "Subtitle"
-  author: "Koen Hufkens"
-  date: "2023/01/01"
+  title: "Spatial upscaling"
+  subtitle: "Exploring the generalisability of global leaf nitrogen models"
+  author: "Benjamin Stocker"
+  date: "2023/11/25"
   page-navigation: true
   chapters:
     - index.qmd
-    - intro.qmd
-    - basicr.qmd
-    - ggplot.qmd
+    - data.qmd
+    - exercise.qmd
     - references.qmd
   favicon: "figures/favicon.ico"
   twitter-card: true
