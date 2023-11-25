@@ -6,10 +6,11 @@ Research in the our group ([GECO](https://geco-group.org/), Institute of Geograp
 
 Load the data directly from its online source on GitHub.
 ```{r}
+library(tidyverse)
 df <- readr::read_csv("https://raw.githubusercontent.com/stineb/leafnp_data/main/data/leafnp_tian_et_al.csv")
 ```
 
-We will work with a limited subset of the variables available in the file:
+We will work with a limited subset of the variables available in the file, and with the data aggregated by sites (identified by their respective longitudes and latitudes):
 
 - `leafN`: leaf nitrogen content, in mass-based concentration units (gN gDM$^{-1}$)
 - `lon`: longitude in decimal degrees east
@@ -19,14 +20,25 @@ We will work with a limited subset of the variables available in the file:
 - `map`: mean annual precipitation (mm yr$^{-1}$)
 - `ndep`: atmospheric nitrogen deposition g m$^{-2}$ yr$^{-1}$
 - `mai`: mean annual daily irradiance $\micro$mol m$^{-2}$ s$^{-1}$
+- `Species`: species name of the plant on which leaf N was measured
 
 ```{r}
-df <- df |> 
-  dplyr::select(leafN, lon, lat, elv, mat, map, ndep, mai)
+common_species <- df |> 
+  group_by(Species) |> 
+  summarise(count = n()) |> 
+  arrange(desc(count)) |> 
+  slice(1:50) |> 
+  pull(Species)
+
+dfs <- df |> 
+  dplyr::select(leafN, lon, lat, elv, mat, map, ndep, mai, Species) |> 
+  filter(Species %in% common_species)
+  # group_by(lon, lat) |> 
+  # summarise(across(where(is.numeric), mean))
 
 # quick overview of data
-skimr::skim(df)
+skimr::skim(dfs)
 
 # show missing data
-visdat::vis_miss(df)
+visdat::vis_miss(dfs)
 ```

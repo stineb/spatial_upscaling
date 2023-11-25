@@ -9,13 +9,12 @@ book:
   title: "Spatial upscaling"
   subtitle: "Exploring the generalisability of global leaf nitrogen models"
   author: "Benjamin Stocker"
-  date: "2023/01/01"
+  date: "2023/11/25"
   page-navigation: true
   chapters:
     - index.qmd
     - data.qmd
-    - basicr.qmd
-    - ggplot.qmd
+    - exercise.qmd
     - references.qmd
   favicon: "figures/favicon.ico"
   twitter-card: true
