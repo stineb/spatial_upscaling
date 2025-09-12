@@ -7,6 +7,8 @@ Research in the our group ([GECO](https://geco-group.org/), Institute of Geograp
 Load the data directly from its online source on GitHub.
 ```{r}
 library(tidyverse)
+library(skimr)
+
 df <- readr::read_csv("https://raw.githubusercontent.com/stineb/leafnp_data/main/data/leafnp_tian_et_al.csv")
 ```
 
